@@ -43,6 +43,18 @@
         opacity: 0;
         transform: translate(-50%,-50%) scale(.5);
         transition: all .4s .2s;
+        @include respond(tab-land){
+            display: block;
+            position: relative;
+            width: 70%;
+        }
+
+        @include respond(tab-port){
+            display: block;
+            position: relative;
+            width: 90%;
+        }
+    
     }
 
     &:target &__content{
@@ -53,22 +65,35 @@
     &__left{
         width: 33.333333%;
         display: table-cell;
+        @include respond(tab-land){
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+        }
     }
     
     &__right{
         width: 66.666666%;
         display: table-cell;
         vertical-align: middle;
-        padding:3rem 5rem;
+        padding:1rem 5rem;
+
+        @include respond(tab-land){
+            width: 100%;
+            display: inline-block;
+        }
     }
 
     &__img{
         display: block;
         width:100%;
+        @include respond(tab-land){
+            width: 50%;
+        }
     }
     &__text{
         font-size: 1.4rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
 
         column-count: 2;
         column-gap: 4rem;
@@ -78,5 +103,11 @@
         -moz-hyphens:auto;
         -ms-hyphens:auto;
         -webkit-hyphens:auto;
+        
+        @include respond(tab-land){
+            column-count: 1;
+            font-size: 1.2rem;
+            margin-bottom:1rem
+        }
     }
 }
