@@ -53,7 +53,8 @@ body {
     display: inline-block;
     background-image: linear-gradient(to right,$color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
-    letter-spacing: .2px;
+    color: transparent;
+    letter-spacing: .2rem;
     transition: all .2s;
     // color:transparent;
     @include respond(tab-port) {
